@@ -1,5 +1,8 @@
 # 🎯 Claude Code + Google Antigravity — A'dan Z'ye Ustalık Referansı
 
+> **🌍 Diller:** [English Guide](GUIDE.md) · **Türkçe Rehber (bu dosya)**
+> [← README'ye dön](README.tr.md)
+
 **Versiyon:** 1.0 — 13 Mayıs 2026
 **Hedef:** Her şeyi tek dosyada bulmak; başka yerden araştırmadan iş yapmak
 **Kapsam:** Antigravity IDE + Claude Code eklentisi içinde doğal dille kod yazarak profesyonel proje üretmek
