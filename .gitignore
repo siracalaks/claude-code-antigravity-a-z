@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (eğer ileride örnekler eklenirse)
+node_modules/
+npm-debug.log*
+
+# Claude Code
+.claude/local/
+.claude/cache/
+
+# Geçici
+*.tmp
+*.bak
+*.log
