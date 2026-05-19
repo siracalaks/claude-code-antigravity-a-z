@@ -1,0 +1,54 @@
+name: 💡 Content suggestion
+description: Propose a new chapter, section, workflow pattern, or expansion.
+title: "[suggest] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggesting new content is welcome. Please describe the gap and why it matters — large additions need discussion before a PR.
+
+  - type: textarea
+    id: gap
+    attributes:
+      label: What's missing?
+      description: What topic, tool, command, or workflow is not covered (or undercovered)?
+    validations:
+      required: true
+
+  - type: textarea
+    id: value
+    attributes:
+      label: Who would benefit and how?
+      description: Concrete scenario. "Solo founders shipping their first MVP would benefit because..." is better than "people would like it".
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Proposed scope
+      options:
+        - A new chapter (large)
+        - A new section in an existing chapter (medium)
+        - A new pattern / example (small)
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: outline
+    attributes:
+      label: Rough outline (optional)
+      description: Bullet points of what the new content would cover.
+      render: markdown
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: I'm willing to draft this content (optional — maintainers can pick it up).
+          required: false

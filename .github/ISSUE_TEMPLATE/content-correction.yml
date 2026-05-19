@@ -1,0 +1,66 @@
+name: 🐛 Content correction
+description: Something in the guide is factually wrong (a CLI flag, command, version, behavior).
+title: "[fix] "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for catching this. The guide is opinionated but it should not be wrong. Please cite a source so the fix can be merged quickly.
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Which file?
+      options:
+        - GUIDE.md (English)
+        - REHBER.md (Türkçe)
+        - Both
+        - README / other
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Chapter / section
+      description: e.g. "Chapter 3.9 — Model selection table" or "Chapter 4.1 — Session & Context"
+      placeholder: "Chapter X.Y — ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: What the guide currently says
+      description: Quote the incorrect text.
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: What it should say
+      description: Your proposed correction.
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source / citation
+      description: Link to release notes, official docs, a commit, or a reproducible test. "I tried it and X happens" is fine — please include the version you tested.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: I'm happy to open a PR for this correction (optional).
+          required: false
