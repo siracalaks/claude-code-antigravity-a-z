@@ -2,7 +2,7 @@
 
 [![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-yellow.svg)](LICENSE)
 ![Dil: Türkçe](https://img.shields.io/badge/Dil-T%C3%BCrk%C3%A7e-red.svg)
-![Versiyon: 1.0](https://img.shields.io/badge/Versiyon-1.0-blue.svg)
+![Versiyon: 1.1](https://img.shields.io/badge/Versiyon-1.1-blue.svg)
 
 **🌍 Diller:** [English](README.md) · **Türkçe**
 **📖 Rehberler:** [GUIDE.md (EN)](GUIDE.md) · [REHBER.md (TR)](REHBER.md)
@@ -55,9 +55,31 @@ Dosyayı oku: **[REHBER.md](REHBER.md)**
 - **Model seçim tablosu** — Opus, Sonnet, Haiku ne zaman? (Bölüm 3.9)
 - **Hooks ile otomatik test/lint** örnekleri (Bölüm 8)
 
+## 📂 Repo Yapısı
+
+```
+.
+├── GUIDE.md              # Rehber (English) — tek kaynak doğruluk
+├── REHBER.md             # Rehber (Türkçe) — GUIDE.md ile senkron tutulur
+├── README.md             # İngilizce README
+├── README.tr.md          # Buradasınız
+├── CONTRIBUTING.md       # Katkı rehberi (EN)
+├── CONTRIBUTING.tr.md    # Katkı rehberi (TR)
+├── CHANGELOG.md          # Sürüm geçmişi (Keep a Changelog)
+├── CITATION.cff          # Akademik atıf metaverisi
+├── LICENSE               # MIT
+├── .github/              # Issue + PR şablonları
+└── examples/             # Çalıştırılabilir skill / hook / workflow dosyaları
+    ├── skills/           # Hazır SKILL.md paketleri
+    ├── hooks/            # Açıklamalı settings.example.json
+    └── workflows/        # GitHub Actions (günlük doc-updater)
+```
+
+Çıkarılmış skill ve hook'ların kurulum talimatları için [`examples/README.md`](examples/README.md) dosyasına bak.
+
 ## 🤝 Katkı
 
-Eksik, hatalı veya güncellenmesi gereken kısımlar için **issue açın** veya PR gönderin. Topluluk katkılarına açık.
+Eksik, hatalı veya güncellenmesi gereken kısımlar için **issue açın** veya PR gönderin. [CONTRIBUTING.tr.md](CONTRIBUTING.tr.md) dosyasını oku. EN ↔ TR senkron kuralı gereği `GUIDE.md` ve `REHBER.md` değişiklikleri aynı PR içinde birlikte yapılmalıdır.
 
 ## 📄 Lisans
 
@@ -65,4 +87,4 @@ Eksik, hatalı veya güncellenmesi gereken kısımlar için **issue açın** vey
 
 ---
 
-**Son güncelleme:** Mayıs 2026 | **Versiyon:** 1.0
+**Son güncelleme:** Mayıs 2026 | **Versiyon:** 1.1 | **Yazar:** [@siracalaks](https://github.com/siracalaks)

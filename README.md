@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Language: English](https://img.shields.io/badge/Lang-English-blue.svg)
-![Version: 1.0](https://img.shields.io/badge/Version-1.0-green.svg)
+![Version: 1.1](https://img.shields.io/badge/Version-1.1-green.svg)
 
 **🌍 Languages:** **English** · [Türkçe](README.tr.md)
 **📖 Guides:** [GUIDE.md (EN)](GUIDE.md) · [REHBER.md (TR)](REHBER.md)
@@ -55,9 +55,31 @@ Recommended first read order:
 - **Model selection table** — when Opus vs. Sonnet vs. Haiku? (Chapter 3.9)
 - **Hook examples** for automatic test/lint/format (Chapter 8)
 
+## 📂 Repo Structure
+
+```
+.
+├── GUIDE.md              # The guide (English) — single source of truth
+├── REHBER.md             # The guide (Türkçe) — kept in sync with GUIDE.md
+├── README.md             # You are here
+├── README.tr.md          # Türkçe README
+├── CONTRIBUTING.md       # How to contribute (EN)
+├── CONTRIBUTING.tr.md    # Katkı rehberi (TR)
+├── CHANGELOG.md          # Version history (Keep a Changelog)
+├── CITATION.cff          # Academic citation metadata
+├── LICENSE               # MIT
+├── .github/              # Issue + PR templates
+└── examples/             # Runnable skill / hook / workflow files
+    ├── skills/           # Drop-in SKILL.md bundles
+    ├── hooks/            # Annotated settings.example.json
+    └── workflows/        # GitHub Actions (daily doc-updater)
+```
+
+See [`examples/README.md`](examples/README.md) for installation instructions on the extracted skills and hooks.
+
 ## 🤝 Contributing
 
-Issues and PRs welcome — corrections, additions, translations to other languages. The Turkish version lives in [REHBER.md](REHBER.md); please keep both in sync when contributing.
+Issues and PRs welcome — corrections, additions, translations to other languages. See [CONTRIBUTING.md](CONTRIBUTING.md). The Turkish version lives in [REHBER.md](REHBER.md); the EN ↔ TR sync rule means changes to one must land alongside changes to the other in the same PR.
 
 ## 📄 License
 
@@ -65,4 +87,4 @@ Issues and PRs welcome — corrections, additions, translations to other languag
 
 ---
 
-**Last updated:** May 2026 | **Version:** 1.0 | **Author:** [@siracalaks](https://github.com/siracalaks)
+**Last updated:** May 2026 | **Version:** 1.1 | **Author:** [@siracalaks](https://github.com/siracalaks)
