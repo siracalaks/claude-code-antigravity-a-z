@@ -1,0 +1,71 @@
+{
+  "_comment": "Reference hooks from GUIDE.md Chapter 8.7. Review each before adding to your real ~/.claude/settings.json — some are macOS-only (notification), some assume specific tooling (Prettier, npm test). Do not copy wholesale.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "_description": "Block dangerous shell commands before they run.",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE '(rm -rf|sudo rm|chmod 777|:(){:|:&};:)'; then echo 'Dangerous command blocked!' >&2; exit 2; fi"
+          }
+        ]
+      },
+      {
+        "_description": "Block reads or writes to secret-bearing files.",
+        "matcher": "Read|Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_FILE_PATH\" | grep -qE '\\.(env|pem|key)$'; then echo 'Secret file access blocked' >&2; exit 2; fi"
+          }
+        ]
+      },
+      {
+        "_description": "Require passing tests before any git commit.",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -q 'git commit'; then npm test --silent || (echo 'Tests must pass before commit' >&2 && exit 2); fi"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "_description": "Auto-format edited files with Prettier.",
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx prettier --write \"$CLAUDE_FILE_PATH\" 2>/dev/null"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "_description": "Inject git status and recent TODOs into the session opener.",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '## Git Status'; git status --short; echo '## TODO Comments'; grep -rn 'TODO:' src/ 2>/dev/null | head -5"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "_description": "macOS notification when the session ends.",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude finished\" with title \"Claude Code\"'"
+          }
+        ]
+      }
+    ]
+  }
+}

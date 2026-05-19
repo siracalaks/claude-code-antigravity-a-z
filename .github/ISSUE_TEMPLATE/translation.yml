@@ -1,0 +1,46 @@
+name: 🌍 Translation
+description: Offer or request a translation into a new language, or report a translation gap between EN and TR.
+title: "[i18n] "
+labels: ["i18n"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Translations grow the reach of the guide. The repo maintains EN and TR as source-of-truth; new languages are welcome with a maintenance commitment.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Translation request type
+      options:
+        - I want to add a new language
+        - EN and TR are out of sync (point out where)
+        - A specific term is mistranslated in TR or EN
+    validations:
+      required: true
+
+  - type: input
+    id: language
+    attributes:
+      label: Language code (if new language)
+      description: ISO 639-1, e.g. `de`, `fr`, `es`, `ja`
+      placeholder: "de"
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: |
+        - For new languages: which chapters are you committing to translate? Will you keep up with future updates?
+        - For sync gaps: which section in EN vs TR diverges?
+        - For mistranslations: current text vs. proposed.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmations
+      options:
+        - label: I read the Translations section in CONTRIBUTING.md.
+          required: true

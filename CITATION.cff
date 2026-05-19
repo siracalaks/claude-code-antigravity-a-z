@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+title: "Claude Code + Google Antigravity — The A-to-Z Guide"
+message: "If you reference this guide in writing, please cite it as below."
+type: dataset
+authors:
+  - family-names: "Sirac"
+    alias: "siracalaks"
+repository-code: "https://github.com/siracalaks/claude-code-antigravity-a-z"
+url: "https://github.com/siracalaks/claude-code-antigravity-a-z"
+abstract: >
+  A single-file reference covering the Claude Code CLI, Google Antigravity
+  IDE, the Model Context Protocol, skills, hooks, subagents, plugins,
+  workflow patterns, and an MVP playbook. Bilingual (English + Turkish).
+keywords:
+  - claude-code
+  - antigravity
+  - mcp
+  - llm
+  - agents
+  - anthropic
+  - developer-tools
+license: MIT
+version: "1.1.0"
+date-released: "2026-05-13"
