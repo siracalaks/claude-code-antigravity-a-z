@@ -1,0 +1,33 @@
+# Daily doc update — invokes the /doc-updater skill from Chapter 13 of GUIDE.md.
+# Drop this in .github/workflows/ of any repo that wants Claude to keep docs fresh.
+# Requires: ANTHROPIC_API_KEY secret, the /doc-updater skill installed in the repo.
+
+name: Daily Doc Update
+on:
+  schedule:
+    - cron: '0 9 * * *'  # 09:00 UTC daily
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Claude Code
+        run: curl -fsSL https://claude.ai/install.sh | bash
+
+      - name: Run doc updater
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          claude -p "/doc-updater run daily update" \
+            --output-format json \
+            --model sonnet
+
+      - name: Create PR if changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "docs: daily auto-update"
+          title: "Auto-update docs $(date +%Y-%m-%d)"
+          branch: auto-doc-update-$(date +%Y%m%d)
